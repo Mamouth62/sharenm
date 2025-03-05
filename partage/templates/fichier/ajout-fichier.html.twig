@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter un fichier{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <h1 class="mb-4">Ajout d'un fichier</h1>
+
+        <div class="card">
+            <div class="card-body">
+                {{ form_start(form) }}
+                
+                
+                <div class="mb-3">
+                    {{ form_label(form.nomOriginal, 'Nom original') }}
+                    {{ form_widget(form.nomOriginal, {'attr': {'class': 'form-control'}}) }}
+                    {{ form_errors(form.nomOriginal) }}
+                </div>
+
+                
+                <div class="mb-3">
+                    {{ form_label(form.nomServeur, 'Nom du serveur') }}
+                    {{ form_widget(form.nomServeur, {'attr': {'class': 'form-control'}}) }}
+                    {{ form_errors(form.nomServeur) }}
+                </div>
+
+                
+                <div class="mb-3">
+                    {{ form_label(form.dateEnvoi, 'Date d\'envoi') }}
+                    {{ form_widget(form.dateEnvoi, {'attr': {'class': 'form-control'}}) }}
+                    {{ form_errors(form.dateEnvoi) }}
+                </div>
+
+                
+                <div class="mb-3">
+                    {{ form_label(form.extension, 'Extension') }}
+                    {{ form_widget(form.extension, {'attr': {'class': 'form-control'}}) }}
+                    {{ form_errors(form.extension) }}
+                </div>
+
+                
+                <div class="mb-3">
+                    {{ form_label(form.taille, 'Taille') }}
+                    {{ form_widget(form.taille, {'attr': {'class': 'form-control'}}) }}
+                    {{ form_errors(form.taille) }}
+                </div>
+
+                
+                <div class="mb-3">
+                    {{ form_label(form.user, 'Utilisateur') }}
+                    {{ form_widget(form.user, {'attr': {'class': 'form-control'}}) }}
+                    {{ form_errors(form.user) }}
+                </div>
+
+                
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary mt-3">Soumettre</button>
+                </div>
+
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

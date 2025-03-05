@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des utilisateurs{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <h1 class="mb-4">Liste des utilisateurs</h1>
+
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Nom de l'utilisateur</th>
+                    <th>Prénom de l'utilisateur</th>
+                    <th>Nombre de fichiers</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for u in users %}
+                    <tr>
+                        <td>{{ u.nom }}</td>
+                        <td>{{ u.prenom }}</td>
+                        <td>{{ u.fichiers | length }}</td> 
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="3" class="text-center">Aucun utilisateur trouvé</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
